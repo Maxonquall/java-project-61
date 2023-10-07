@@ -1,38 +1,39 @@
 package hexlet.code;
+
+import hexlet.games.Cli;
 import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        var key = false;
+        var gameIdentifierIsCorrect = false;
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet\n2 - Even\n0 - Exit");
+        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n0 - Exit");
         System.out.print("Your choice: ");
-                while (!key && in.hasNextInt()) {
-                    var game = in.nextInt();
+                while (!gameIdentifierIsCorrect) {
+                    var game = in.nextLine();
                     switch (game) {
-                        case 0:
+                        case "0":
                             System.out.println("Exit");
-                            key = true;
+                            gameIdentifierIsCorrect = true;
                             break;
-                        case 1:
-                            Cli greetings = new Cli();
-                            greetings.greetings();
-                            key = true;
+                        case "1":
+                            Cli.greetings();
+                            gameIdentifierIsCorrect = true;
                             break;
-                        case 2:
-                            Even number = new Even();
-                            number.isEven();
-                            key = true;
+                        case "2":
+                            Engine.engine("2");
+                            gameIdentifierIsCorrect = true;
+                            break;
+                        case "3":
+                            Engine.engine("3");
+                            gameIdentifierIsCorrect = true;
                             break;
                         default:
-                            System.out.println("Wrong number\n" +
-                                    "1 - Greet\n0 - Exit\n");
+                            System.out.println("Wrong number\n1 - Greet\n2 - Even\n3 - Calc\n0 - Exit");
                             System.out.print("Your choice: ");
                     }
                 }
-               /* if (!in.hasNextInt()) {
-                    System.out.println("Please reboot program and use number");
-                }*/
             in.close();
             }
 
