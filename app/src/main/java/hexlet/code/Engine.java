@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.games.Calc;
-import hexlet.games.Cli;
-import hexlet.games.Even;
-import hexlet.games.GSD;
+import hexlet.games.*;
 
 
 public class Engine {
@@ -24,7 +21,12 @@ public class Engine {
                 }
             case "4":
                 while (count < 3) {
-                    GSD.gcd(name);
+                    GSD.gcdCalc(name);
+                    count++;
+                }
+            case "5":
+                while (count < 3) {
+                    Progression.progressionCalc(name);
                     count++;
                 }
         }
