@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.games.Calc;
 import hexlet.games.Cli;
 import hexlet.games.Even;
+import hexlet.games.GSD;
 
 
 public class Engine {
@@ -19,6 +20,11 @@ public class Engine {
             case "3":
                 while (count < 3) {
                     Calc.calculate(name);
+                    count++;
+                }
+            case "4":
+                while (count < 3) {
+                    GSD.gcd(name);
                     count++;
                 }
         }

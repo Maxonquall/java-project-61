@@ -8,7 +8,7 @@ public class App {
         Scanner in = new Scanner(System.in);
         var gameIdentifierIsCorrect = false;
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n0 - Exit");
+        System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GSD\n0 - Exit");
         System.out.print("Your choice: ");
                 while (!gameIdentifierIsCorrect) {
                     var game = in.nextLine();
@@ -29,8 +29,12 @@ public class App {
                             Engine.engine("3");
                             gameIdentifierIsCorrect = true;
                             break;
+                        case "4":
+                            Engine.engine("4");
+                            gameIdentifierIsCorrect = true;
+                            break;
                         default:
-                            System.out.println("Wrong number\n1 - Greet\n2 - Even\n3 - Calc\n0 - Exit");
+                            System.out.println("Wrong number\n1 - Greet\n2 - Even\n3 - Calc\n4 - GSD\n0 - Exit");
                             System.out.print("Your choice: ");
                     }
                 }
