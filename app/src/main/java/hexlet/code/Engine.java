@@ -29,6 +29,11 @@ public class Engine {
                     Progression.progressionCalc(name);
                     count++;
                 }
+            case "6":
+                while (count < 3) {
+                    Prime.primeCalc(name);
+                    count++;
+                }
         }
         if (count == 3) {
             System.out.println("Congratulations, " + name + "!");
