@@ -8,7 +8,9 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        var number = random.nextInt(1009 - 2) + 2;
+        final int lowerBorderOfRandom = 2;
+        final int upperBorderOfRandom = 1009;
+        var number = random.nextInt(upperBorderOfRandom - lowerBorderOfRandom) + lowerBorderOfRandom;
         var isNumberPrime = isPrime(number);
         String correctAnswer = isNumberPrime ? "yes" : "no";
         System.out.println("Question: " + number);
@@ -23,7 +25,7 @@ public class Prime {
         }
     }
     private static boolean isPrime(int number) {
-        for (int i = 2; i*i <= number; i++) {
+        for (int i = 2; (i * i) <= number; i++) {
             if (number % i == 0) {
                 return false;
             }

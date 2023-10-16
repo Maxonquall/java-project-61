@@ -8,12 +8,17 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        var arraySize = random.nextInt(16 - 5) + 5;
+        final int lowerBorderOfSize = 5;
+        final int upperBorderOfSize = 16;
+        final int firstNumberLimit = 20;
+        final int lowerBorderOfStep = 11;
+        final int upperBorderOfStep = 2;
+        var arraySize = random.nextInt(upperBorderOfSize - lowerBorderOfSize) + lowerBorderOfSize;
         int[] array = new int[arraySize];
         String[] arrayOfString = new String[arraySize];
-        array[0] = random.nextInt(20);
+        array[0] = random.nextInt(firstNumberLimit);
         arrayOfString[0] = Integer.toString(array[0]);
-        var step = random.nextInt(11 - 2) + 2;
+        var step = random.nextInt(upperBorderOfStep - lowerBorderOfStep) + lowerBorderOfStep;
         var missedNumber = random.nextInt(arraySize);
         for (int i = 1; i < arraySize; i++) {
             array[i] = array[i - 1] + step;
@@ -32,7 +37,7 @@ public class Progression {
             System.out.println("Correct!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                    + correctAnswer + "'" );
+                    + correctAnswer + "'");
             System.out.println("Let's try again, " + name + "!");
             System.exit(0);
         }
