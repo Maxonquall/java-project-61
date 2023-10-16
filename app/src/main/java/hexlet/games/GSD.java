@@ -17,7 +17,7 @@ public class GSD {
             }
         }
         var resultToString = Integer.toString(gcd);
-        System.out.println("Question: " + numberOne + " and " + numberTwo);
+        System.out.println("Question: " + numberOne + " " + numberTwo);
         System.out.print("Your answer: ");
         var answer = scanner.nextLine();
         if (answer.equals(resultToString)) {
