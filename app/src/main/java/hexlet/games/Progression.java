@@ -8,11 +8,11 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        final int lowerBorderOfSize = 6;
+        final int lowerBorderOfSize = 5;
         final int upperBorderOfSize = 16;
         final int firstNumberLimit = 20;
-        final int lowerBorderOfStep = 11;
-        final int upperBorderOfStep = 2;
+        final int lowerBorderOfStep = 2;
+        final int upperBorderOfStep = 11;
         var arraySize = random.nextInt(upperBorderOfSize - lowerBorderOfSize) + lowerBorderOfSize;
         int[] array = new int[arraySize];
         String[] arrayOfString = new String[arraySize];
