@@ -8,7 +8,7 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        final int lowerBorderOfSize = 5;
+        final int lowerBorderOfSize = 6;
         final int upperBorderOfSize = 16;
         final int firstNumberLimit = 20;
         final int lowerBorderOfStep = 11;
