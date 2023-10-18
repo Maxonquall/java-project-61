@@ -1,12 +1,10 @@
 package hexlet.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class GSD {
-    public static void gcdCalc(String name) {
+    public static String isGSD() {
         System.out.println("Find the greatest common divisor of given numbers.");
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         final int numberOneRandomLimit = 1000;
         final int numberTwoRandomLimit = 1000;
@@ -20,15 +18,6 @@ public class GSD {
         }
         var resultToString = Integer.toString(gcd);
         System.out.println("Question: " + numberOne + " " + numberTwo);
-        System.out.print("Your answer: ");
-        var answer = scanner.nextLine();
-        if (answer.equals(resultToString)) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                    + gcd + "'");
-            System.out.println("Let's try again, " + name + "!");
-            System.exit(0);
-        }
+        return resultToString;
     }
 }
