@@ -1,6 +1,7 @@
 package hexlet.code;
 
-import hexlet.games.Cli;
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 public class App {
@@ -22,23 +23,23 @@ public class App {
                     gameIdentifierIsCorrect = true;
                     break;
                 case "2":
-                    Engine.engine("2");
+                    Even.even();
                     gameIdentifierIsCorrect = true;
                     break;
                 case "3":
-                    Engine.engine("3");
+                    Calc.calc();
                     gameIdentifierIsCorrect = true;
                     break;
                 case "4":
-                    Engine.engine("4");
+                    GSD.gsd();
                     gameIdentifierIsCorrect = true;
                     break;
                 case "5":
-                    Engine.engine("5");
+                    Progression.whatNumberIsMissing();
                     gameIdentifierIsCorrect = true;
                     break;
                 case "6":
-                    Engine.engine("6");
+                    Prime.isPrime();
                     gameIdentifierIsCorrect = true;
                     break;
                 default:
