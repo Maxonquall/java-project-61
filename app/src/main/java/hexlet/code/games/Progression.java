@@ -18,8 +18,7 @@ public class Progression {
             var missedNumber = random.nextInt(aps.length);
             var answer = aps[missedNumber];
             aps[missedNumber] = "..";
-            var question = "Question: " + String.join(", ", aps);
-            // var question = "Question: " + Arrays.toString(aps);
+            var question = "Question: " + String.join(" ", aps);
             Engine.engine(question, answer, name, round, roundQuantity);
             round++;
         }
