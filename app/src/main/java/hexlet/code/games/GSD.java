@@ -21,8 +21,9 @@ public class GSD {
     }
     private static int generateNumber() {
         Random random = new Random();
-        final int numberRandomLimit = 100;
-        return random.nextInt(numberRandomLimit);
+        final int lowerBorder = 1;
+        final int upperBorder = 100;
+        return random.nextInt(upperBorder - lowerBorder) + lowerBorder;
     }
 
     private static String calculateGSD(int numberOne, int numberTwo) {
