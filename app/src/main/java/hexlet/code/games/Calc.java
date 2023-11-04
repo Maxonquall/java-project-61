@@ -18,7 +18,7 @@ public class Calc {
             var answer = calculate(firstNumber, secondNumber, operation);
             var question = "Question: " + firstNumber + " " + operation + " " + secondNumber;
             Engine.engine(question, answer, name, round, roundQuantity);
-            round++;
+            round++; //test
         }
     }
     private static int generateNumber() {
