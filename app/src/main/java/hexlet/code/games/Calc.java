@@ -1,35 +1,30 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
-
+import hexlet.code.Generator;
 
 public class Calc {
+    public static final String TASK = "What is the result of the expression?";
+    public static final int MIN = 0;
+    public static final int MAX = 100;
+    public static final int ARRAY_SIZE = 100;
+    public static final int MAX_OPERATION = 3;
     public static void calc() {
         var name = Cli.greetings();
-        final int roundQuantity = 3;
-        var round = 0;
-        while (round < roundQuantity) {
-            System.out.println("What is the result of the expression?");
-            var firstNumber = generateNumber();
-            var secondNumber = generateNumber();
+        String[] questions = new String[ARRAY_SIZE];
+        String[] answers = new String[ARRAY_SIZE];
+        for (int i = 0; i < questions.length; i++) {
+            var firstNumber = Generator.getRandomInt(MIN, MAX);
+            var secondNumber = Generator.getRandomInt(MIN, MAX);
             var operation = generateOperation();
-            var answer = calculate(firstNumber, secondNumber, operation);
-            var question = "Question: " + firstNumber + " " + operation + " " + secondNumber;
-            Engine.engine(question, answer, name, round, roundQuantity);
-            round++; //test
+            answers[i] = calculate(firstNumber, secondNumber, operation);
+            questions[i] = firstNumber + " " + operation + " " + secondNumber;
         }
+        Engine.engine(TASK, name, questions, answers);
     }
-    private static int generateNumber() {
-        Random random = new Random();
-        final int numberRandomLimit = 100;
-        return random.nextInt(numberRandomLimit);
-    }
+
     private static String generateOperation() {
-        Random random = new Random();
-        final int operationTypes = 3;
-        var operation = random.nextInt(operationTypes);
+        var operation = Generator.getRandomInt(MIN, MAX_OPERATION);
         return switch (operation) {
             case 0:
                 yield "+";
