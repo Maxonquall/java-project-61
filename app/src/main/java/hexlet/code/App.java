@@ -22,7 +22,10 @@ public class App {
                     System.out.println("Exit");
                     System.exit(0);
                 }
-                case "1" -> Cli.greetings();
+                case "1" -> {
+                    Cli.greetings();
+                    System.exit(0);
+                }
                 case "2" -> Even.even();
                 case "3" -> Calc.calc();
                 case "4" -> GSD.gsd();
