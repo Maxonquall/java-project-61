@@ -3,7 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Even;
 import hexlet.code.games.Cli;
 import hexlet.code.games.Calc;
-import hexlet.code.games.GSD;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
@@ -15,28 +15,16 @@ public class App {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GSD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.print("Your choice: ");
-        while (true) {
-            var game = in.nextLine();
-            switch (game) {
-                case "0" -> {
-                    System.out.println("Exit");
-                    System.exit(0);
-                }
-                case "1" -> {
-                    Cli.greetings();
-                    System.exit(0);
-                }
-                case "2" -> Even.even();
-                case "3" -> Calc.calc();
-                case "4" -> GSD.gsd();
-                case "5" -> Progression.whatNumberIsMissing();
-                case "6" -> Prime.isPrime();
-                default -> {
-                    System.out.println("Wrong number\n1 - Greet\n2 - Even\n3 - Calc\n4 - GSD\n"
-                            + "5 - Progression\n6 - Prime\n0 - Exit");
-                    System.out.print("Your choice: ");
-                }
-            }
+        var game = in.nextLine();
+        switch (game) {
+            case "0" -> System.out.println("Exit");
+            case "1" -> Cli.greetings();
+            case "2" -> Even.playEven();
+            case "3" -> Calc.playCalc();
+            case "4" -> GCD.playGcd();
+            case "5" -> Progression.playMissingNumber();
+            case "6" -> Prime.playIsPrime();
+            default -> System.out.println("Wrong number");
         }
     }
 }

@@ -3,22 +3,23 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Generator;
 
-public class GSD {
+public class GCD {
     public static final String TASK = "Find the greatest common divisor of given numbers.";
     public static final int MIN = 1;
     public static final int MAX = 100;
-    public static final int ARRAY_SIZE = 100;
-    public static void gsd() {
+    public static final int ROUNDS_COUNT = 10;
+    public static final int QUESTION = 0;
+    public static final int ANSWER = 1;
+    public static void playGcd() {
         var name = Cli.greetings();
-        String[] questions = new String[ARRAY_SIZE];
-        String[] answers = new String[ARRAY_SIZE];
-        for (int i = 0; i < questions.length; i++) {
+        String[][] rounds = new String[ROUNDS_COUNT][2];
+        for (int i = 0; i < rounds.length; i++) {
             var numberOne = Generator.getRandomInt(MIN, MAX);
             var numberTwo = Generator.getRandomInt(MIN, MAX);
-            answers[i] = calculateGSD(numberOne, numberTwo);
-            questions[i] = numberOne + " " + numberTwo;
+            rounds[i][QUESTION] = numberOne + " " + numberTwo;
+            rounds[i][ANSWER] = calculateGSD(numberOne, numberTwo);
         }
-        Engine.engine(TASK, name, questions, answers);
+        Engine.play(TASK, name, rounds);
     }
 
     private static String calculateGSD(int numberOne, int numberTwo) {

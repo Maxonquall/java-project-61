@@ -7,20 +7,21 @@ public class Calc {
     public static final String TASK = "What is the result of the expression?";
     public static final int MIN = 0;
     public static final int MAX = 100;
-    public static final int ARRAY_SIZE = 100;
+    public static final int ROUNDS_COUNT = 10;
+    public static final int QUESTION = 0;
+    public static final int ANSWER = 1;
     public static final int MAX_OPERATION = 3;
-    public static void calc() {
+    public static void playCalc() {
         var name = Cli.greetings();
-        String[] questions = new String[ARRAY_SIZE];
-        String[] answers = new String[ARRAY_SIZE];
-        for (int i = 0; i < questions.length; i++) {
+        String[][] rounds = new String[ROUNDS_COUNT][2];
+        for (int i = 0; i < rounds.length; i++) {
             var firstNumber = Generator.getRandomInt(MIN, MAX);
             var secondNumber = Generator.getRandomInt(MIN, MAX);
             var operation = generateOperation();
-            answers[i] = calculate(firstNumber, secondNumber, operation);
-            questions[i] = firstNumber + " " + operation + " " + secondNumber;
+            rounds[i][QUESTION] = firstNumber + " " + operation + " " + secondNumber;
+            rounds[i][ANSWER] = calculate(firstNumber, secondNumber, operation);
         }
-        Engine.engine(TASK, name, questions, answers);
+        Engine.play(TASK, name, rounds);
     }
 
     private static String generateOperation() {
