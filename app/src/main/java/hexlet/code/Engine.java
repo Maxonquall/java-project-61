@@ -1,12 +1,15 @@
 package hexlet.code;
 
+import hexlet.code.games.Cli;
+
 import java.util.Scanner;
 
 public class Engine {
     public static final int ROUND_COUNT = 3;
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
-    public static void play(String task, String name, String[][] rounds) {
+    public static void play(String task, String[][] rounds) {
+        var name = Cli.greetings();
         Scanner scanner = new Scanner(System.in);
         int round = 0;
         System.out.println(task);

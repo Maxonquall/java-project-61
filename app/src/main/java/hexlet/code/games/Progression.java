@@ -17,7 +17,6 @@ public class Progression {
     public static final int MAX_STEP = 11;
 
     public static void playMissingNumber() {
-        var name = Cli.greetings();
         String[][] rounds = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < rounds.length; i++) {
             var arraySize = Generator.getRandomInt(MIN_SIZE_ARRAY, MAX_SIZE_ARRAY);
@@ -29,7 +28,7 @@ public class Progression {
             aps[missedNumber] = "..";
             rounds[i][QUESTION] = String.join(" ", aps);
         }
-        Engine.play(TASK, name, rounds);
+        Engine.play(TASK, rounds);
     }
 
     private static String[] generateArray(int arraySize, int step, int firstNumber) {

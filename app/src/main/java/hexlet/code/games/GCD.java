@@ -11,7 +11,6 @@ public class GCD {
     public static final int QUESTION = 0;
     public static final int ANSWER = 1;
     public static void playGcd() {
-        var name = Cli.greetings();
         String[][] rounds = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < rounds.length; i++) {
             var numberOne = Generator.getRandomInt(MIN, MAX);
@@ -19,7 +18,7 @@ public class GCD {
             rounds[i][QUESTION] = numberOne + " " + numberTwo;
             rounds[i][ANSWER] = calculateGSD(numberOne, numberTwo);
         }
-        Engine.play(TASK, name, rounds);
+        Engine.play(TASK, rounds);
     }
 
     private static String calculateGSD(int numberOne, int numberTwo) {

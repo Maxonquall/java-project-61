@@ -14,7 +14,6 @@ public class Prime {
     public static final int ANSWER = 1;
 
     public static void playIsPrime() {
-        var name = Cli.greetings();
         String[][] rounds = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < rounds.length; i++) {
             var number = Generator.getRandomInt(MIN, MAX);
@@ -22,7 +21,7 @@ public class Prime {
             rounds[i][QUESTION] = Integer.toString(number);
             rounds[i][ANSWER] = isNumberPrime ? "yes" : "no";
         }
-        Engine.play(TASK, name, rounds);
+        Engine.play(TASK, rounds);
     }
     private static boolean isPrime(int number) {
         for (int i = 2; (i * i) <= number; i++) {

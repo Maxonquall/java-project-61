@@ -12,7 +12,6 @@ public class Calc {
     public static final int ANSWER = 1;
     public static final int MAX_OPERATION = 3;
     public static void playCalc() {
-        var name = Cli.greetings();
         String[][] rounds = new String[ROUNDS_COUNT][2];
         for (int i = 0; i < rounds.length; i++) {
             var firstNumber = Generator.getRandomInt(MIN, MAX);
@@ -21,7 +20,7 @@ public class Calc {
             rounds[i][QUESTION] = firstNumber + " " + operation + " " + secondNumber;
             rounds[i][ANSWER] = calculate(firstNumber, secondNumber, operation);
         }
-        Engine.play(TASK, name, rounds);
+        Engine.play(TASK, rounds);
     }
 
     private static String generateOperation() {
@@ -34,7 +33,7 @@ public class Calc {
             case 2:
                 yield "*";
             default:
-                yield "";
+                yield null;
         };
     }
     private static String calculate(int firstNumber, int secondNumber, String operation) {
